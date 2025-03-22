@@ -1,0 +1,114 @@
+<!-- Navbar -->
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-white text-black shadow-md px-6 py-4 transition-all duration-500 z-50 flex items-center">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo (Default) -->
+        <div class="relative">
+            <a href="index.html">
+                <img id="logo-default" src="/src/assets/new logo black.png" alt="Logo" class="h-10 transition-opacity duration-500">
+                <img id="logo-scroll" src="/src/assets/white-new-logo.webp" alt="Scrolled Logo" class="h-10 absolute top-0 left-0 opacity-0 transition-opacity duration-500">
+            </a>
+        </div>
+
+        <!-- Menu Button (Mobile) -->
+        <button id="menu-btn" class="text-gray-700 block md:hidden text-3xl focus:outline-none">
+            ☰
+        </button>
+
+        <!-- Menu Links (Desktop) -->
+        <ul id="menu" class="hidden md:flex space-x-6 font-semibold">
+            <li><a href="/index.html" class="nav-link px-4 py-2 rounded-full transition hover:text-blue-500">Home</a></li>
+            <li><a href="/src/pages/about/about.html" class="nav-link px-4 py-2 rounded-full transition hover:text-blue-500">About</a></li>
+            <li><a href="/src/pages/contact/contact.html" class="nav-link px-4 py-2 rounded-full transition hover:text-blue-500">Contact</a></li>
+            <li><a href="tel:+917008937155" class="nav-link px-4 py-2 rounded-full transition hover:text-blue-500">+91 7008937155</a></li>
+            <li>
+                <a href="#signin" class="nav-link px-4 py-2 rounded-full bg-emerald-600 text-white shadow-md hover:bg-emerald-700 transition">
+                    Sign In
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-white text-gray-900 text-center transform -translate-y-full transition-transform duration-500 ease-in-out shadow-lg z-50">
+        <div class="absolute top-5 left-6 text-xl font-bold">Menu</div>
+        <button id="close-btn" class="absolute top-5 right-5 text-3xl font-bold text-gray-900 focus:outline-none">
+            x
+        </button>
+        <ul class="flex flex-col space-y-6 pt-20 text-xl">
+            <li><a href="index.html" class="block py-3 hover:text-blue-500">Home</a></li>
+            <li><a href="/src/pages/about/about.html" class="block py-3 hover:text-blue-500">About</a></li>
+            <li><a href="/src/pages/contact/contact.html" class="block py-3 hover:text-blue-500">Contact</a></li>
+            <li><a href="tel:+917008937155" class="block py-3 hover:text-blue-500">+91 7008937155</a></li>
+            <li>
+                <a href="#signin" class="block py-3 bg-blue-600 text-white rounded-md px-6 py-2 mx-auto w-32 hover:bg-blue-700">
+                    Sign In
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- JavaScript -->
+<script>
+    let lastScrollY = 0;
+    let navbar = document.getElementById("navbar");
+    let logoDefault = document.getElementById("logo-default");
+    let logoScroll = document.getElementById("logo-scroll");
+    let isScrolled = false;
+
+    function handleScroll() {
+        let currentScrollY = window.scrollY;
+        let scrollThreshold = 50; // Change happens at 50px scroll
+
+        if (currentScrollY > scrollThreshold && !isScrolled) {
+            // Apply scroll changes
+            isScrolled = true;
+            navbar.classList.add("bg-[#446680]", "text-white", "rounded-b-[50px]", "shadow-lg");
+            navbar.classList.remove("bg-white", "text-black");
+
+            logoDefault.classList.add("opacity-0");
+            logoScroll.classList.remove("opacity-0");
+
+        } else if (currentScrollY <= scrollThreshold && isScrolled) {
+            // Revert to original navbar
+            isScrolled = false;
+            navbar.classList.add("bg-white", "text-black");
+            navbar.classList.remove("bg-[#446680]", "text-white", "rounded-b-[50px]", "shadow-lg");
+
+            logoDefault.classList.remove("opacity-0");
+            logoScroll.classList.add("opacity-0");
+        }
+    }
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Mobile Menu Toggle
+    document.getElementById("menu-btn").addEventListener("click", function() {
+        document.getElementById("mobile-menu").classList.remove("-translate-y-full");
+    });
+
+    document.getElementById("close-btn").addEventListener("click", function() {
+        document.getElementById("mobile-menu").classList.add("-translate-y-full");
+    });
+
+    // Highlight active link
+    function setActiveLink() {
+        let links = document.querySelectorAll(".nav-link");
+        let currentPath = window.location.pathname;
+
+        links.forEach(link => {
+            let linkPath = new URL(link.href).pathname;
+
+            if (linkPath === currentPath) {
+                link.classList.add("bg-blue-500", "text-white", "rounded-full");
+            } else {
+                link.classList.remove("bg-blue-500", "text-white", "rounded-full");
+            }
+        });
+    }
+
+    // Run on page load
+    window.addEventListener("DOMContentLoaded", setActiveLink);
+</script>
+
