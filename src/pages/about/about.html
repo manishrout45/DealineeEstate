@@ -66,6 +66,7 @@
     let navbar = document.getElementById("navbar");
     let logoDefault = document.getElementById("logo-default");
     let logoScroll = document.getElementById("logo-scroll");
+    let menuBtn = document.getElementById("menu-btn"); 
     let isScrolled = false;
 
     function handleScroll() {
@@ -81,6 +82,11 @@
             logoDefault.classList.add("opacity-0");
             logoScroll.classList.remove("opacity-0");
 
+
+             // Change menu button color to white
+             menuBtn.classList.remove("text-gray-700");
+            menuBtn.classList.add("text-white");
+
         } else if (currentScrollY <= scrollThreshold && isScrolled) {
             // Revert to original navbar
             isScrolled = false;
@@ -89,6 +95,10 @@
 
             logoDefault.classList.remove("opacity-0");
             logoScroll.classList.add("opacity-0");
+
+             // Change menu button color back to gray
+             menuBtn.classList.remove("text-white");
+            menuBtn.classList.add("text-gray-700");
         }
     }
 

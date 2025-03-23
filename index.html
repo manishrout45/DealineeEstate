@@ -66,6 +66,7 @@
     let navbar = document.getElementById("navbar");
     let logoDefault = document.getElementById("logo-default");
     let logoScroll = document.getElementById("logo-scroll");
+    let menuBtn = document.getElementById("menu-btn"); 
     let isScrolled = false;
 
     function handleScroll() {
@@ -81,6 +82,11 @@
             logoDefault.classList.add("opacity-0");
             logoScroll.classList.remove("opacity-0");
 
+
+             // Change menu button color to white
+             menuBtn.classList.remove("text-gray-700");
+            menuBtn.classList.add("text-white");
+
         } else if (currentScrollY <= scrollThreshold && isScrolled) {
             // Revert to original navbar
             isScrolled = false;
@@ -89,6 +95,10 @@
 
             logoDefault.classList.remove("opacity-0");
             logoScroll.classList.add("opacity-0");
+
+             // Change menu button color back to gray
+             menuBtn.classList.remove("text-white");
+            menuBtn.classList.add("text-gray-700");
         }
     }
 
@@ -367,35 +377,39 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <!-- Project 1 -->
             <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <a href="/src/pages/full-listing/sell-listing3.html">
                 <img id="project1" src="/Home/assets/3d-rendering-contemporary-modern-dining-room-living-room-with-luxury-decor.jpg" alt="Upcoming Project 1" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-3 text-center transform translate-y-6 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                    <h3 class="text-lg font-semibold">JB Meadowex</h3>
-                </div>
+                    <h3 class="text-lg font-semibold">Meadowex</h3>
+                </div></a>
             </div>
 
             <!-- Project 2 -->
             <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <a href="/src/pages/full-listing/sell-listing2.html">
                 <img id="project2" src="/Home/assets/3d-rendering-loft-luxury-living-room-with-bookshelf-near-bookshelf (1).jpg" alt="Upcoming Project 2" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-3 text-center transform translate-y-6 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                    <h3 class="text-lg font-semibold">JB Polaris</h3>
-                </div>
+                    <h3 class="text-lg font-semibold">Polaris</h3>
+                </div></a>
             </div>
 
             <!-- Project 3 -->
             <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <a href="/src/pages/full-listing/sell-listing4.html">
                 <img id="project3" src="/Home/assets/3d-rendering-modern-dining-room-living-room-with-luxury-decor.jpg" alt="Upcoming Project 3" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-3 text-center transform translate-y-6 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                     <h3 class="text-lg font-semibold">Suman Mansion</h3>
-                </div>
+                </div></a>
             </div>
 
             <!-- Project 4 -->
             <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <a href="/src/pages/full-listing/sell-listing1.html">
                 <img id="project4" src="/Home/assets/bangkok-thailand-august-12-2016-beautiful-luxury-living-room.jpg" alt="Upcoming Project 4" class="w-full h-64 object-cover transition duration-300 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-3 text-center transform translate-y-6 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                     <h3 class="text-lg font-semibold">Arya Suman Complex</h3>
                 </div>
-            </div>
+            </div></a>
         </div>
     </div>
 </section>
