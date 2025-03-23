@@ -9,7 +9,7 @@
 </head>
 <body class="font-sans">
 <!-- Navbar -->
-<nav id="navbar" class="fixed top-0 left-0 w-full bg-white text-black shadow-md px-6 py-4 transition-all duration-500 z-50 flex items-center">
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-white/50 backdrop-blur-md text-black shadow-md px-6 py-4 transition-all duration-500 z-50 flex items-center">
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo (Default) -->
         <div class="relative">
@@ -146,7 +146,7 @@ document.getElementById("close-btn").addEventListener("click", function() {
         <!-- Hero Content Positioned Above the Search Bar -->
         <div class="text-center text-white px-3 mb-3">
             <h1 id="hero-heading" class="text-2xl sm:text-2xl md:text-4xl font-bold mb-4 sm:mt-6 drop-shadow-lg">
-                Properties to buy in Bhubaneswar
+                Buy Properties in Bhubaneswar
             </h1>
             
         </div>
@@ -155,22 +155,22 @@ document.getElementById("close-btn").addEventListener("click", function() {
 <div class="bg-black bg-opacity-50 p-2 md:p-4 rounded-md w-full sm:w-[90%] md:w-[42rem] flex flex-wrap gap-2 sm:gap-2 sm:p-2 -mb-6 sm:-mb-8">
 
     <div class="mb-4 flex flex-wrap justify-center gap-1 sm:gap-2">
-        <button onclick="setActiveButton(this, 'buy.html'); changeHeroImage('buy'); filterProperties('buy')" 
+        <button onclick="setActiveButton(this, 'buy.html'); changeHeroImage('Buy'); filterProperties('Buy')" 
             class="filter-btn text-white px-2 py-1 sm:px-1 sm:py-1 text-[8px] sm:text-xs md:text-sm rounded-md shadow-md hover:scale-105 transition-all min-w-[60px] sm:min-w-[80px]">
             <span class="active-indicator absolute bottom-0 left-0 w-0 h-[2px] bg-red-500 transition-all"></span>
             <b>BUY</b>
         </button>
-        <button onclick="setActiveButton(this, 'rent.html'); changeHeroImage('rent'); filterProperties('rent')" 
+        <button onclick="setActiveButton(this, 'rent.html'); changeHeroImage('Rent'); filterProperties('Rent')" 
             class="filter-btn text-white px-2 py-1 sm:px-1 sm:py-1 text-[8px] sm:text-xs md:text-sm rounded-md shadow-md hover:scale-105 transition-all min-w-[60px] sm:min-w-[80px]">
             <span class="active-indicator absolute bottom-0 left-0 w-0 h-[2px] bg-red-500 transition-all"></span>
             <b>RENT</b>
         </button>
-        <button onclick="setActiveButton(this, 'commercial.html'); changeHeroImage('commercial'); filterProperties('commercial')" 
+        <button onclick="setActiveButton(this, 'commercial.html'); changeHeroImage('Commercial'); filterProperties('Commercial')" 
             class="filter-btn text-white px-2 py-1 sm:px-1 sm:py-1 text-[8px] sm:text-xs md:text-sm rounded-md shadow-md hover:scale-105 transition-all min-w-[60px] sm:min-w-[100px]">
             <span class="active-indicator absolute bottom-0 left-0 w-0 h-[2px] bg-red-500 transition-all"></span>
             <b>OFFICE</b>
         </button>
-        <button onclick="setActiveButton(this, 'plot.html'); changeHeroImage('plot'); filterProperties('plot')" 
+        <button onclick="setActiveButton(this, 'plot.html'); changeHeroImage('Plot'); filterProperties('Plot')" 
             class="filter-btn text-white px-2 py-1 sm:px-1 sm:py-1 text-[8px] sm:text-xs md:text-sm rounded-md shadow-md hover:scale-105 transition-all min-w-[60px] sm:min-w-[80px]">
             <span class="active-indicator absolute bottom-0 left-0 w-0 h-[2px] bg-red-500 transition-all"></span>
             <b>PLOT</b>

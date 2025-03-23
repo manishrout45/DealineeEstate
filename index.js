@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var popupIcon = document.getElementById("popupIcon");
     var popupImage = document.getElementById("popupImage");
 
-    var images = ["src/assets/image/home/Popup/meadowex1.jpeg", "src/assets/image/home/Popup/meadowex3.jpeg", "src/assets/image/home/Popup/meadowex4.jpeg", "src/assets/image/home/Popup/meadowex5.jpeg", "src/assets/image/home/Popup/meadowex7.jpeg"];
+    var images = ["src/assets/image/home/Popup/meadowex1.jpeg", "src/assets/image/home/Popup/meadowex3.jpeg", "src/assets/image/home/Popup/meadowex4.jpeg", "src/assets/image/home/Popup/meadowex5.jpeg", "src/assets/image/home/Popup/meadowex7.jpeg","popup2.jpg"];
     var currentIndex = 0;
     var isDragging = false, offsetX, offsetY;
 
@@ -79,18 +79,18 @@ function changeHeroImage(category) {
 
     // Define images for each category
     const images = {
-        buy: "/src/assets/image/home/buy.jpg",
-        rent: "01.jpg",
-        commercial: "/src/assets/image/home/commercial (2).jpg",
-        plot: "/src/assets/image/home/plot (1).jpg"
+        Buy: "03.jpg",
+        Rent: "01.jpg",
+        Commercial: "02.jpg",
+        Plot: "04.jpg"
     };
 
     // Define headings for each category
     const headings = {
-        buy: "Properties to buy in Bhubaneswar",
-        rent: "Rental Properties in Bhubaneswar",
-        commercial: "Commercial Properties in Bhubaneswar",
-        plot: "Plots Available in Bhubaneswar"
+        Buy: "Properties to buy in Bhubaneswar",
+        Rent: "Rental Properties in Bhubaneswar",
+        Commercial: "Commercial Properties in Bhubaneswar",
+        Plot: "Plots Available in Bhubaneswar"
     };
 
     // Update hero background image and heading
@@ -103,7 +103,7 @@ function changeHeroImage(category) {
 //search bar Button working
 function filterProperties(type) {
     // Update the hero section heading
-    document.getElementById('hero-heading').innerText = `Properties to ${type} in Bhubaneswar`;
+    document.getElementById('hero-heading').innerText = ` ${type} Properties in Bhubaneswar`;
     
     // Filter property listings
     document.querySelectorAll('.property').forEach(property => {
