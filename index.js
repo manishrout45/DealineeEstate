@@ -80,7 +80,7 @@ function changeHeroImage(category) {
     // Define images for each category
     const images = {
         buy: "/src/assets/image/home/buy.jpg",
-        rent: "/src/assets/image/home/rent (1).jpg",
+        rent: "01.jpg",
         commercial: "/src/assets/image/home/commercial (2).jpg",
         plot: "/src/assets/image/home/plot (1).jpg"
     };
